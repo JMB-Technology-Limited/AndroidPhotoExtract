@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">AndroidPhotoExtract Test App</string>
+    <string name="activity_main_title">AndroidPhotoExtract Test App</string>
+    <string name="activity_main_button_pick">Extract A Photo</string>
+</resources>
