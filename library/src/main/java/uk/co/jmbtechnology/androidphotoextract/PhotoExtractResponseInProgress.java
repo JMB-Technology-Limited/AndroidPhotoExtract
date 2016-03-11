@@ -1,4 +1,4 @@
-package uk.co.httpjmbtechnology.androidphotoextract;
+package uk.co.jmbtechnology.androidphotoextract;
 
 
 import android.app.ActivityManager;
@@ -17,6 +17,8 @@ import android.provider.MediaStore;
 import android.util.Log;
 
 import java.io.IOException;
+
+import uk.co.jmbtechnology.androidphotoextract.PhotoExtractRequest;
 
 
 /**

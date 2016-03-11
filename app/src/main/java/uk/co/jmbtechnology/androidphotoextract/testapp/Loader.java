@@ -1,12 +1,12 @@
-package uk.co.httpjmbtechnology.androidphotoextract.testapp;
+package uk.co.jmbtechnology.androidphotoextract.testapp;
 
 import android.content.Context;
 import android.content.Intent;
 import android.support.v4.content.AsyncTaskLoader;
 
-import uk.co.httpjmbtechnology.androidphotoextract.PhotoExtractRequest;
-import uk.co.httpjmbtechnology.androidphotoextract.PhotoExtractResponse;
-import uk.co.httpjmbtechnology.androidphotoextract.PhotoExtractWorkerGotResult;
+import uk.co.jmbtechnology.androidphotoextract.PhotoExtractRequest;
+import uk.co.jmbtechnology.androidphotoextract.PhotoExtractResponse;
+import uk.co.jmbtechnology.androidphotoextract.PhotoExtractWorkerGotResult;
 
 /**
   * @url https://github.com/JMB-Technology-Limited/AndroidPhotoExtract

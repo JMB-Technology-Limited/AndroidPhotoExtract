@@ -1,4 +1,4 @@
-package uk.co.httpjmbtechnology.androidphotoextract;
+package uk.co.jmbtechnology.androidphotoextract;
 
 
 /**

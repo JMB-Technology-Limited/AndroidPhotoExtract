@@ -1,4 +1,4 @@
-package uk.co.httpjmbtechnology.androidphotoextract.testapp;
+package uk.co.jmbtechnology.androidphotoextract.testapp;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -9,10 +9,10 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import uk.co.httpjmbtechnology.androidphotoextract.PhotoExtractResponse;
-import uk.co.httpjmbtechnology.androidphotoextract.PhotoExtractWorkerGetIntent;
-import uk.co.httpjmbtechnology.androidphotoextract.PhotoExtractRequest;
-import uk.co.httpjmbtechnology.androidphotoextract.PhotoExtractRequestBuilder;
+import uk.co.jmbtechnology.androidphotoextract.PhotoExtractResponse;
+import uk.co.jmbtechnology.androidphotoextract.PhotoExtractWorkerGetIntent;
+import uk.co.jmbtechnology.androidphotoextract.PhotoExtractRequest;
+import uk.co.jmbtechnology.androidphotoextract.PhotoExtractRequestBuilder;
 
 /**
   * @url https://github.com/JMB-Technology-Limited/AndroidPhotoExtract
@@ -83,7 +83,7 @@ public class MainActivity extends FragmentActivity {
          **/
         @Override
         public Loader<LoaderResult> onCreateLoader(int id, Bundle args) {
-            return new uk.co.httpjmbtechnology.androidphotoextract.testapp.Loader(MainActivity.this, photoExtractRequest, resultsIntent);
+            return new uk.co.jmbtechnology.androidphotoextract.testapp.Loader(MainActivity.this, photoExtractRequest, resultsIntent);
         }
         
         /**

@@ -1,6 +1,6 @@
-package uk.co.httpjmbtechnology.androidphotoextract.testapp;
+package uk.co.jmbtechnology.androidphotoextract.testapp;
 
-import uk.co.httpjmbtechnology.androidphotoextract.PhotoExtractResponse;
+import uk.co.jmbtechnology.androidphotoextract.PhotoExtractResponse;
 
 /**
   * @url https://github.com/JMB-Technology-Limited/AndroidPhotoExtract

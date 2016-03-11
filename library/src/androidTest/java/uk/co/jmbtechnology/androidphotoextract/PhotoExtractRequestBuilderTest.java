@@ -1,7 +1,9 @@
-package uk.co.httpjmbtechnology.androidphotoextract;
+package uk.co.jmbtechnology.androidphotoextract;
 
 
 import android.test.AndroidTestCase;
+
+
 
 public class PhotoExtractRequestBuilderTest  extends AndroidTestCase {
 
