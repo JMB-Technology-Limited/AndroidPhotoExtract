@@ -4,6 +4,8 @@
 
 It's an Android library that lets the user pick a photo from somewhere on the device and returns all kinds of information to the user.
 
+Note it does not provide any UI - it sends out an Intent to whatever apps the user has on the device and is familiar with and lets them handle it. It then attempts to interpret the returned result.
+
 ## Why do you need a library to do that?
 
 Because depending on which app the user used to pick a photo, the information returned will be different. Dealing with that in your app is a real pain! This library abstracts over all that, and tries to return the information in a standard format.
@@ -12,7 +14,7 @@ Because depending on which app the user used to pick a photo, the information re
 
 Grab the library from this repository.
 
-Note you will need android.permission.READ_EXTERNAL_STORAGE permission. If you are using optional permission (targetting Android 6 and above) you will need to make sure you have obtained this permission from the user first.
+Note you will need android.permission.READ_EXTERNAL_STORAGE permission. If you are using optional permission (targeting Android 6.0 and above) you will need to make sure you have obtained this permission from the user first.
 
 ## How do I use it?
 
