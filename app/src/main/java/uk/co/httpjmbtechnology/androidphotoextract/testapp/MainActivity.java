@@ -2,10 +2,9 @@ package uk.co.httpjmbtechnology.androidphotoextract.testapp;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.LoaderManager;
 import android.support.v4.content.Loader;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -19,7 +18,7 @@ import uk.co.httpjmbtechnology.androidphotoextract.PhotoExtractRequestBuilder;
   * @url https://github.com/JMB-Technology-Limited/AndroidPhotoExtract
   * @license Open Source - BSD
   **/
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends FragmentActivity {
 
     protected final int LOADER_ID = 1;
 
@@ -29,9 +28,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-
     }
 
     private PhotoExtractRequestBuilder photoExtractRequestBuilder;
