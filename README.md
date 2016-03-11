@@ -2,7 +2,7 @@
 
 ## What is it?
 
-It's an Android library that lets the user pick a photo from somewhere on the device and returns all kinds of information to the user.
+It's an Android library that lets the user pick a photo from somewhere on the device and returns all kinds of information to your app.
 
 Note it does not provide any UI - it sends out an Intent to whatever apps the user has on the device and is familiar with and lets them handle it. It then attempts to interpret the returned result.
 
