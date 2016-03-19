@@ -16,6 +16,7 @@ import android.provider.DocumentsContract;
 import android.provider.MediaStore;
 import android.util.Log;
 
+import java.io.File;
 import java.io.IOException;
 
 import uk.co.jmbtechnology.androidphotoextract.PhotoExtractRequest;
@@ -208,6 +209,14 @@ public class PhotoExtractResponseInProgress {
 
 
 
+        }
+
+
+        if (filename != null) {
+            File file = new File(filename);
+            if (Utils.isFileInFolder(file,  Environment.getExternalStorageDirectory())) {
+                filenameInExternalStorage = filename;
+            }
         }
 
     }

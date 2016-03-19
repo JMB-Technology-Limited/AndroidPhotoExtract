@@ -35,6 +35,8 @@ public class PhotoExtractResponse {
 
     public PhotoExtractResponse(PhotoExtractResponseInProgress photoExtractResponseInProgress) {
         this.filename = photoExtractResponseInProgress.getFilename();
+        this.filenameInAppFiles = photoExtractResponseInProgress.getFilenameInAppFiles();
+        this.filenameInExternalStorage = photoExtractResponseInProgress.getFilenameInExternalStorage();
         this.rawDebugInformation = photoExtractResponseInProgress.getRawDebugInformation();
         this.height = photoExtractResponseInProgress.getHeight();
         this.width = photoExtractResponseInProgress.getWidth();
