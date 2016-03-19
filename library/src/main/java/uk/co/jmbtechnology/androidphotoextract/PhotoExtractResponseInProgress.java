@@ -17,6 +17,7 @@ import android.provider.MediaStore;
 import android.util.Log;
 
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 
 import uk.co.jmbtechnology.androidphotoextract.PhotoExtractRequest;
@@ -216,6 +217,24 @@ public class PhotoExtractResponseInProgress {
             File file = new File(filename);
             if (Utils.isFileInFolder(file,  Environment.getExternalStorageDirectory())) {
                 filenameInExternalStorage = filename;
+            }
+            if (Utils.isFileInFolder(file,  context.getFilesDir())) {
+                filenameInAppFiles = filename;
+            }
+
+            if (photoExtractRequest.returnFileNameInAppFilesDir && filenameInAppFiles == null) {
+                try {
+                    File inFile = new File(filename);
+                    File outFileDir = new File(context.getFilesDir().getAbsolutePath() + photoExtractRequest.getFileNameInAppFilesPrefix());
+                    outFileDir.mkdirs();
+                    File outFile = File.createTempFile("photo_", inFile.getName(), outFileDir);
+                    Utils.copyFile(inFile, outFile);
+                    filenameInAppFiles = outFile.getAbsolutePath();
+                } catch (FileNotFoundException e) {
+                    throw new PhotoExtractError(e, rawDebugInformation);
+                } catch (IOException e) {
+                    throw new PhotoExtractError(e, rawDebugInformation);
+                }
             }
         }
 
