@@ -33,88 +33,99 @@ public class PhotoExtractRequestBuilder {
         return returnRawDebugInformation;
     }
 
-    public void setReturnRawDebugInformation(boolean returnRawDebugInformation) {
+    public PhotoExtractRequestBuilder setReturnRawDebugInformation(boolean returnRawDebugInformation) {
         this.returnRawDebugInformation = returnRawDebugInformation;
+        return this;
     }
 
     public boolean isReturnFileName() {
         return returnFileName;
     }
 
-    public void setReturnFileName(boolean returnFileName) {
+    public PhotoExtractRequestBuilder setReturnFileName(boolean returnFileName) {
         this.returnFileName = returnFileName;
+        return this;
     }
 
     public boolean isReturnDimensions() {
         return returnDimensions;
     }
 
-    public void setReturnDimensions(boolean returnDimensions) {
+    public PhotoExtractRequestBuilder setReturnDimensions(boolean returnDimensions) {
         this.returnDimensions = returnDimensions;
+        return this;
     }
 
     public boolean isReturnMIMEType() {
         return returnMIMEType;
     }
 
-    public void setReturnMIMEType(boolean returnMIMEType) {
+    public PhotoExtractRequestBuilder setReturnMIMEType(boolean returnMIMEType) {
         this.returnMIMEType = returnMIMEType;
+        return this;
     }
 
     public boolean isReturnEXIF() {
         return returnEXIF;
     }
 
-    public void setReturnEXIF(boolean returnEXIF) {
+    public PhotoExtractRequestBuilder setReturnEXIF(boolean returnEXIF) {
         this.returnEXIF = returnEXIF;
+        return this;
     }
 
     public boolean isReturnThumbnail() {
         return returnThumbnail;
     }
 
-    public void setReturnThumbnail(boolean returnThumbnail) {
+    public PhotoExtractRequestBuilder setReturnThumbnail(boolean returnThumbnail) {
         this.returnThumbnail = returnThumbnail;
+        return this;
     }
 
     public int getReturnThumbnailSize() {
         return returnThumbnailSize;
     }
 
-    public void setReturnThumbnailSize(int returnThumbnailSize) {
+    public PhotoExtractRequestBuilder setReturnThumbnailSize(int returnThumbnailSize) {
         this.returnThumbnailSize = returnThumbnailSize;
+        return this;
     }
 
     public String getFileNameInAppFilesPrefix() {
         return fileNameInAppFilesPrefix;
     }
 
-    public void setFileNameInAppFilesPrefix(String fileNameInAppFilesPrefix) {
+    public PhotoExtractRequestBuilder setFileNameInAppFilesPrefix(String fileNameInAppFilesPrefix) {
         this.fileNameInAppFilesPrefix = fileNameInAppFilesPrefix;
+        return this;
     }
 
     public String getFileNameInExternalStoragePrefix() {
         return fileNameInExternalStoragePrefix;
     }
 
-    public void setFileNameInExternalStoragePrefix(String fileNameInExternalStoragePrefix) {
+    public PhotoExtractRequestBuilder setFileNameInExternalStoragePrefix(String fileNameInExternalStoragePrefix) {
         this.fileNameInExternalStoragePrefix = fileNameInExternalStoragePrefix;
+        return this;
     }
 
     public boolean isReturnFileNameInAppFilesDir() {
         return returnFileNameInAppFilesDir;
     }
 
-    public void setReturnFileNameInAppFilesDir(boolean returnFileNameInAppFilesDir) {
+    public PhotoExtractRequestBuilder setReturnFileNameInAppFilesDir(boolean returnFileNameInAppFilesDir) {
         this.returnFileNameInAppFilesDir = returnFileNameInAppFilesDir;
+        return this;
     }
 
     public boolean isReturnFileNameInExternalStorage() {
         return returnFileNameInExternalStorage;
     }
 
-    public void setReturnFileNameInExternalStorage(boolean returnFileNameInExternalStorage) {
+    public PhotoExtractRequestBuilder setReturnFileNameInExternalStorage(boolean returnFileNameInExternalStorage) {
         this.returnFileNameInExternalStorage = returnFileNameInExternalStorage;
+        return this;
     }
 
     public PhotoExtractRequest build() {

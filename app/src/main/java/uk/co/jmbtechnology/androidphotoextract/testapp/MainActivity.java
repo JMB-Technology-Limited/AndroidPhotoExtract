@@ -44,16 +44,16 @@ public class MainActivity extends FragmentActivity {
      * Set up a request object with what you want back, get the intent, start it.
      **/
     public void onClickExtract(View view) {
-        photoExtractRequestBuilder = new PhotoExtractRequestBuilder();
-        photoExtractRequestBuilder.setReturnRawDebugInformation(true);
-        photoExtractRequestBuilder.setReturnFileName(true);
-        photoExtractRequestBuilder.setReturnFileNameInAppFilesDir(true);
-        photoExtractRequestBuilder.setReturnFileNameInExternalStorage(true);
-        photoExtractRequestBuilder.setReturnDimensions(true);
-        photoExtractRequestBuilder.setReturnMIMEType(true);
-        photoExtractRequestBuilder.setReturnEXIF(true);
-        photoExtractRequestBuilder.setReturnThumbnail(true);
-        photoExtractRequestBuilder.setReturnThumbnailSize(400);
+        photoExtractRequestBuilder = new PhotoExtractRequestBuilder()
+            .setReturnRawDebugInformation(true)
+            .setReturnFileName(true)
+            .setReturnFileNameInAppFilesDir(true)
+            .setReturnFileNameInExternalStorage(true)
+            .setReturnDimensions(true)
+            .setReturnMIMEType(true)
+            .setReturnEXIF(true)
+            .setReturnThumbnail(true)
+            .setReturnThumbnailSize(400);
         photoExtractRequest = photoExtractRequestBuilder.build();
         photoExtractWorker = new PhotoExtractWorkerGetIntent(this);
         Intent intent = photoExtractWorker.getIntent(photoExtractRequest);
