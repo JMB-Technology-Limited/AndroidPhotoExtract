@@ -14,6 +14,10 @@ public class PhotoExtractResponse {
 
     protected String filename = null;
 
+    protected String filenameInAppFiles = null;
+
+    protected String filenameInExternalStorage = null;
+
     protected String rawDebugInformation = "";
 
     protected Integer height = null;
@@ -50,6 +54,22 @@ public class PhotoExtractResponse {
 
     public boolean hasFilename() {
         return filename != null;
+    }
+
+    public String getFilenameInAppFiles() {
+        return filenameInAppFiles;
+    }
+
+    public boolean hasFilenameInAppFiles() {
+        return filenameInAppFiles != null;
+    }
+
+    public String getFilenameInExternalStorage() {
+        return filenameInExternalStorage;
+    }
+
+    public boolean hasFilenameInExternalStorage() {
+        return filenameInExternalStorage != null;
     }
 
     public Integer getHeight() {

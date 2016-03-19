@@ -18,6 +18,8 @@ public class PhotoExtractRequestBuilderTest  extends AndroidTestCase {
 		assertFalse(photoExtractRequest.isReturnMIMEType());
 		assertFalse(photoExtractRequest.isReturnRawDebugInformation());
 		assertFalse(photoExtractRequest.isReturnThumbnail());
+		assertFalse(photoExtractRequest.isReturnFileNameInAppFilesDir());
+		assertFalse(photoExtractRequest.isReturnFileNameInExternalStorage());
 	}
 
 	public void testDimensions() {
@@ -32,6 +34,8 @@ public class PhotoExtractRequestBuilderTest  extends AndroidTestCase {
 		assertFalse(photoExtractRequest.isReturnMIMEType());
 		assertFalse(photoExtractRequest.isReturnRawDebugInformation());
 		assertFalse(photoExtractRequest.isReturnThumbnail());
+		assertFalse(photoExtractRequest.isReturnFileNameInAppFilesDir());
+		assertFalse(photoExtractRequest.isReturnFileNameInExternalStorage());
 	}
 
 	public void testEXIF() {
@@ -46,6 +50,8 @@ public class PhotoExtractRequestBuilderTest  extends AndroidTestCase {
 		assertFalse(photoExtractRequest.isReturnMIMEType());
 		assertFalse(photoExtractRequest.isReturnRawDebugInformation());
 		assertFalse(photoExtractRequest.isReturnThumbnail());
+		assertFalse(photoExtractRequest.isReturnFileNameInAppFilesDir());
+		assertFalse(photoExtractRequest.isReturnFileNameInExternalStorage());
 	}
 
 	public void testFilename() {
@@ -60,6 +66,40 @@ public class PhotoExtractRequestBuilderTest  extends AndroidTestCase {
 		assertFalse(photoExtractRequest.isReturnMIMEType());
 		assertFalse(photoExtractRequest.isReturnRawDebugInformation());
 		assertFalse(photoExtractRequest.isReturnThumbnail());
+		assertFalse(photoExtractRequest.isReturnFileNameInAppFilesDir());
+		assertFalse(photoExtractRequest.isReturnFileNameInExternalStorage());
+	}
+
+	public void testFilenameApp() {
+		PhotoExtractRequestBuilder photoExtractRequestBuilder = new PhotoExtractRequestBuilder();
+		photoExtractRequestBuilder.setReturnFileNameInAppFilesDir(true);
+
+		PhotoExtractRequest photoExtractRequest = photoExtractRequestBuilder.build();
+
+		assertFalse(photoExtractRequest.isReturnDimensions());
+		assertFalse(photoExtractRequest.isReturnEXIF());
+		assertFalse(photoExtractRequest.isReturnFileName());
+		assertFalse(photoExtractRequest.isReturnMIMEType());
+		assertFalse(photoExtractRequest.isReturnRawDebugInformation());
+		assertFalse(photoExtractRequest.isReturnThumbnail());
+		assertTrue(photoExtractRequest.isReturnFileNameInAppFilesDir());
+		assertFalse(photoExtractRequest.isReturnFileNameInExternalStorage());
+	}
+
+	public void testFilenameExternalStorage() {
+		PhotoExtractRequestBuilder photoExtractRequestBuilder = new PhotoExtractRequestBuilder();
+		photoExtractRequestBuilder.setReturnFileNameInExternalStorage(true);
+
+		PhotoExtractRequest photoExtractRequest = photoExtractRequestBuilder.build();
+
+		assertFalse(photoExtractRequest.isReturnDimensions());
+		assertFalse(photoExtractRequest.isReturnEXIF());
+		assertFalse(photoExtractRequest.isReturnFileName());
+		assertFalse(photoExtractRequest.isReturnMIMEType());
+		assertFalse(photoExtractRequest.isReturnRawDebugInformation());
+		assertFalse(photoExtractRequest.isReturnThumbnail());
+		assertFalse(photoExtractRequest.isReturnFileNameInAppFilesDir());
+		assertTrue(photoExtractRequest.isReturnFileNameInExternalStorage());
 	}
 
 	public void testMIMEType() {
@@ -74,6 +114,8 @@ public class PhotoExtractRequestBuilderTest  extends AndroidTestCase {
 		assertTrue(photoExtractRequest.isReturnMIMEType());
 		assertFalse(photoExtractRequest.isReturnRawDebugInformation());
 		assertFalse(photoExtractRequest.isReturnThumbnail());
+		assertFalse(photoExtractRequest.isReturnFileNameInAppFilesDir());
+		assertFalse(photoExtractRequest.isReturnFileNameInExternalStorage());
 	}
 
 	public void testRawDebugInfo() {
@@ -88,6 +130,8 @@ public class PhotoExtractRequestBuilderTest  extends AndroidTestCase {
 		assertFalse(photoExtractRequest.isReturnMIMEType());
 		assertTrue(photoExtractRequest.isReturnRawDebugInformation());
 		assertFalse(photoExtractRequest.isReturnThumbnail());
+		assertFalse(photoExtractRequest.isReturnFileNameInAppFilesDir());
+		assertFalse(photoExtractRequest.isReturnFileNameInExternalStorage());
 	}
 
 	public void testThumbnail() {
@@ -102,6 +146,8 @@ public class PhotoExtractRequestBuilderTest  extends AndroidTestCase {
 		assertFalse(photoExtractRequest.isReturnMIMEType());
 		assertFalse(photoExtractRequest.isReturnRawDebugInformation());
 		assertTrue(photoExtractRequest.isReturnThumbnail());
+		assertFalse(photoExtractRequest.isReturnFileNameInAppFilesDir());
+		assertFalse(photoExtractRequest.isReturnFileNameInExternalStorage());
 	}
 
 }

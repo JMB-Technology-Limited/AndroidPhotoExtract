@@ -47,6 +47,8 @@ public class MainActivity extends FragmentActivity {
         photoExtractRequestBuilder = new PhotoExtractRequestBuilder();
         photoExtractRequestBuilder.setReturnRawDebugInformation(true);
         photoExtractRequestBuilder.setReturnFileName(true);
+        photoExtractRequestBuilder.setReturnFileNameInAppFilesDir(true);
+        photoExtractRequestBuilder.setReturnFileNameInExternalStorage(true);
         photoExtractRequestBuilder.setReturnDimensions(true);
         photoExtractRequestBuilder.setReturnMIMEType(true);
         photoExtractRequestBuilder.setReturnEXIF(true);
@@ -111,6 +113,20 @@ public class MainActivity extends FragmentActivity {
                     filenameTextView.setText("Not returned");
                 }
 
+                TextView filenameAppFilesTextView = (TextView) findViewById(R.id.filename_app_files);
+                if (photoExtractResponse.hasFilenameInAppFiles()) {
+                    filenameAppFilesTextView.setText(photoExtractResponse.getFilenameInAppFiles());
+                } else {
+                    filenameAppFilesTextView.setText("Not returned");
+                }
+
+                TextView filenameExternalStorageTextView = (TextView) findViewById(R.id.filename_external_storage);
+                if (photoExtractResponse.hasFilenameInExternalStorage()) {
+                    filenameExternalStorageTextView.setText(photoExtractResponse.getFilenameInExternalStorage());
+                } else {
+                    filenameExternalStorageTextView.setText("Not returned");
+                }
+
                 TextView widthTextView = (TextView) findViewById(R.id.width_x_height);
                 if (photoExtractResponse.hasWidthHeight()) {
                     widthTextView.setText(photoExtractResponse.getWidth() + " x " + photoExtractResponse.getHeight());
@@ -152,9 +168,9 @@ public class MainActivity extends FragmentActivity {
                 StringWriter errors = new StringWriter();
                 data.getError().getOriginalThrowable().printStackTrace(new PrintWriter(errors));
                 rawDebugInfoTextView.setText(
-                        data.getError().getOriginalThrowable().toString() +"\n\n" +
-                        errors.toString()+"\n\n"+
-                        data.getError().getRawDebugInformation()
+                        data.getError().getOriginalThrowable().toString() + "\n\n" +
+                                errors.toString() + "\n\n" +
+                                data.getError().getRawDebugInformation()
                 );
 
                 Toast.makeText(getBaseContext(), R.string.activity_main_error, Toast.LENGTH_SHORT).show();

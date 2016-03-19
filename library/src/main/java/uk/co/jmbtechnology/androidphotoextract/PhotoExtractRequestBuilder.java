@@ -11,6 +11,14 @@ public class PhotoExtractRequestBuilder {
 
     protected boolean returnFileName = false;
 
+    protected boolean returnFileNameInAppFilesDir = false;
+
+    protected String fileNameInAppFilesPrefix = "/photoExtract/";
+
+    protected boolean returnFileNameInExternalStorage = false;
+
+    protected String fileNameInExternalStoragePrefix = "/photoExtract/";
+
     protected boolean returnDimensions = false;
 
     protected boolean returnMIMEType = false;
@@ -77,10 +85,46 @@ public class PhotoExtractRequestBuilder {
         this.returnThumbnailSize = returnThumbnailSize;
     }
 
+    public String getFileNameInAppFilesPrefix() {
+        return fileNameInAppFilesPrefix;
+    }
+
+    public void setFileNameInAppFilesPrefix(String fileNameInAppFilesPrefix) {
+        this.fileNameInAppFilesPrefix = fileNameInAppFilesPrefix;
+    }
+
+    public String getFileNameInExternalStoragePrefix() {
+        return fileNameInExternalStoragePrefix;
+    }
+
+    public void setFileNameInExternalStoragePrefix(String fileNameInExternalStoragePrefix) {
+        this.fileNameInExternalStoragePrefix = fileNameInExternalStoragePrefix;
+    }
+
+    public boolean isReturnFileNameInAppFilesDir() {
+        return returnFileNameInAppFilesDir;
+    }
+
+    public void setReturnFileNameInAppFilesDir(boolean returnFileNameInAppFilesDir) {
+        this.returnFileNameInAppFilesDir = returnFileNameInAppFilesDir;
+    }
+
+    public boolean isReturnFileNameInExternalStorage() {
+        return returnFileNameInExternalStorage;
+    }
+
+    public void setReturnFileNameInExternalStorage(boolean returnFileNameInExternalStorage) {
+        this.returnFileNameInExternalStorage = returnFileNameInExternalStorage;
+    }
+
     public PhotoExtractRequest build() {
         PhotoExtractRequest photoExtractRequest = new PhotoExtractRequest(
                 returnRawDebugInformation,
                 returnFileName,
+                returnFileNameInAppFilesDir,
+                fileNameInAppFilesPrefix,
+                returnFileNameInExternalStorage,
+                fileNameInExternalStoragePrefix,
                 returnDimensions,
                 returnMIMEType,
                 returnEXIF,

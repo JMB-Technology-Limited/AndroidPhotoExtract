@@ -26,9 +26,21 @@ public class PhotoExtractRequest {
 
     protected int returnThumbnailSize = 400;
 
+    protected boolean returnFileNameInAppFilesDir = false;
+
+    protected String fileNameInAppFilesPrefix = "/photoExtract/";
+
+    protected boolean returnFileNameInExternalStorage = false;
+
+    protected String fileNameInExternalStoragePrefix = "/photoExtract/";
+
     public PhotoExtractRequest(
             boolean returnRawDebugInformation,
             boolean returnFileName,
+            boolean returnFileNameInAppFilesDir,
+            String fileNameInAppFilesPrefix,
+            boolean returnFileNameInExternalStorage,
+            String fileNameInExternalStoragePrefix,
             boolean returnDimensions,
             boolean returnMIMEType,
             boolean returnEXIF,
@@ -36,6 +48,10 @@ public class PhotoExtractRequest {
             int returnThumbnailSize) {
         this.returnRawDebugInformation = returnRawDebugInformation;
         this.returnFileName = returnFileName;
+        this.returnFileNameInAppFilesDir = returnFileNameInAppFilesDir;
+        this.fileNameInAppFilesPrefix = fileNameInAppFilesPrefix;
+        this.returnFileNameInExternalStorage = returnFileNameInExternalStorage;
+        this.fileNameInExternalStoragePrefix = fileNameInExternalStoragePrefix;
         this.returnDimensions = returnDimensions;
         this.returnMIMEType = returnMIMEType;
         this.returnEXIF = returnEXIF;
@@ -69,5 +85,21 @@ public class PhotoExtractRequest {
 
     public int getReturnThumbnailSize() {
         return returnThumbnailSize;
+    }
+
+    public String getFileNameInAppFilesPrefix() {
+        return fileNameInAppFilesPrefix;
+    }
+
+    public String getFileNameInExternalStoragePrefix() {
+        return fileNameInExternalStoragePrefix;
+    }
+
+    public boolean isReturnFileNameInAppFilesDir() {
+        return returnFileNameInAppFilesDir;
+    }
+
+    public boolean isReturnFileNameInExternalStorage() {
+        return returnFileNameInExternalStorage;
     }
 }

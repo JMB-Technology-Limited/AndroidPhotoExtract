@@ -29,6 +29,10 @@ public class PhotoExtractResponseInProgress {
 
     protected String filename = null;
 
+    protected String filenameInAppFiles = null;
+
+    protected String filenameInExternalStorage = null;
+
     protected String rawDebugInformation = "";
 
     protected Integer height = null;
@@ -248,6 +252,14 @@ public class PhotoExtractResponseInProgress {
 
     public String getFilename() {
         return filename;
+    }
+
+    public String getFilenameInAppFiles() {
+        return filenameInAppFiles;
+    }
+
+    public String getFilenameInExternalStorage() {
+        return filenameInExternalStorage;
     }
 
     public Integer getHeight() {

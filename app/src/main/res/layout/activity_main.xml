@@ -49,6 +49,28 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             style="@style/label"
+            android:text="Filename In App Files"/>
+
+        <TextView
+            android:id="@+id/filename_app_files"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/label"
+            android:text="Filename In External Storage"/>
+
+        <TextView
+            android:id="@+id/filename_external_storage"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/label"
             android:text="Width X Height"/>
 
         <TextView
