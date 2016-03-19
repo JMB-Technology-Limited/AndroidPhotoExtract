@@ -6,6 +6,7 @@ import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.LoaderManager;
 import android.support.v4.content.Loader;
 import android.view.View;
+import android.widget.CheckBox;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -47,8 +48,8 @@ public class MainActivity extends FragmentActivity {
         photoExtractRequestBuilder = new PhotoExtractRequestBuilder()
             .setReturnRawDebugInformation(true)
             .setReturnFileName(true)
-            .setReturnFileNameInAppFilesDir(true)
-            .setReturnFileNameInExternalStorage(true)
+            .setReturnFileNameInAppFilesDir(((CheckBox)findViewById(R.id.request_filename_app)).isChecked())
+            .setReturnFileNameInExternalStorage(((CheckBox)findViewById(R.id.request_filename_external)).isChecked())
             .setReturnDimensions(true)
             .setReturnMIMEType(true)
             .setReturnEXIF(true)

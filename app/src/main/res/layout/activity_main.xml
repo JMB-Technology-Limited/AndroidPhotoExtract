@@ -17,6 +17,20 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
+        <CheckBox
+            android:id="@+id/request_filename_app"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:checked="false"
+            android:text="@string/activity_main_filename_app"/>
+
+        <CheckBox
+            android:id="@+id/request_filename_external"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="@string/activity_main_filename_external_storage"/>
+
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
