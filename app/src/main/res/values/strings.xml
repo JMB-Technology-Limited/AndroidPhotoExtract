@@ -12,4 +12,7 @@
     <string name="activity_main_exif_make">EXIF Make</string>
     <string name="activity_main_exif_orientation">EXIF Orientation</string>
     <string name="activity_main_raw_debug_info">Raw Debug Information</string>
+    <string name="activity_main_send_report">Email report</string>
+    <string name="activity_main_send_report_subject">Photo Extract Report</string>
+    <string name="activity_main_send_report_chooser_title">Send Email</string>
 </resources>
