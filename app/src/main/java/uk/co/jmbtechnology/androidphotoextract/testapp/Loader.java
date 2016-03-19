@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.support.v4.content.AsyncTaskLoader;
 
+import uk.co.jmbtechnology.androidphotoextract.PhotoExtractError;
 import uk.co.jmbtechnology.androidphotoextract.PhotoExtractRequest;
 import uk.co.jmbtechnology.androidphotoextract.PhotoExtractResponse;
 import uk.co.jmbtechnology.androidphotoextract.PhotoExtractWorkerGotResult;
@@ -28,9 +29,14 @@ public class Loader extends AsyncTaskLoader<LoaderResult> {
 
         PhotoExtractWorkerGotResult photoExtractWorkerGotResult = new PhotoExtractWorkerGotResult(getContext());
 
-        PhotoExtractResponse photoExtractResponse = photoExtractWorkerGotResult.process(photoExtractRequest, resultsIntent);
+        try {
+            PhotoExtractResponse photoExtractResponse = photoExtractWorkerGotResult.process(photoExtractRequest, resultsIntent);
+            return new LoaderResult(photoExtractResponse);
+        } catch (PhotoExtractError photoExtractError) {
+            photoExtractError.getOriginalThrowable().printStackTrace();
+            return new LoaderResult(photoExtractError);
+        }
 
-        return new LoaderResult(photoExtractResponse);
     }
 
 }

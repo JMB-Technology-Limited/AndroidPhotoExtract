@@ -50,7 +50,7 @@ public class PhotoExtractResponseInProgress {
     /**
     * @TargetApi(Build.VERSION_CODES.KITKAT)
     **/
-    public void process(Context context, Uri uri, PhotoExtractRequest photoExtractRequest) {
+    public void process(Context context, Uri uri, PhotoExtractRequest photoExtractRequest) throws PhotoExtractError {
         rawDebugInformation += "URI:\n" + uri.toString() + "\n";
 
 
@@ -161,7 +161,7 @@ public class PhotoExtractResponseInProgress {
                 //}
 
             } catch (IOException e) {
-                e.printStackTrace();
+                throw new PhotoExtractError(e, rawDebugInformation);
             }
 
         }
@@ -195,7 +195,7 @@ public class PhotoExtractResponseInProgress {
                 }
 
             } catch (OutOfMemoryError e) {
-                e.printStackTrace();
+                throw new PhotoExtractError(e, rawDebugInformation);
             } finally {
                 // do not do
                 // if (bitmap != null) bitmap.recycle();

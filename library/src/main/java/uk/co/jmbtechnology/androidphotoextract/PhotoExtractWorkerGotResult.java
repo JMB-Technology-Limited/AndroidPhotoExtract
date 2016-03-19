@@ -17,8 +17,7 @@ public class PhotoExtractWorkerGotResult {
         this.context = context;
     }
 
-
-    public PhotoExtractResponse process(PhotoExtractRequest photoExtractRequest, Intent resultIntent) {
+    public PhotoExtractResponse process(PhotoExtractRequest photoExtractRequest, Intent resultIntent) throws PhotoExtractError {
 
         PhotoExtractResponseInProgress photoExtractResponseInProgress = new PhotoExtractResponseInProgress();
 

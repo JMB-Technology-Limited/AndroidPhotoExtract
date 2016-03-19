@@ -1,5 +1,6 @@
 package uk.co.jmbtechnology.androidphotoextract.testapp;
 
+import uk.co.jmbtechnology.androidphotoextract.PhotoExtractError;
 import uk.co.jmbtechnology.androidphotoextract.PhotoExtractResponse;
 
 /**
@@ -8,13 +9,31 @@ import uk.co.jmbtechnology.androidphotoextract.PhotoExtractResponse;
   **/
 public class LoaderResult {
 
-    protected PhotoExtractResponse photoExtractResponse;
+    protected PhotoExtractResponse photoExtractResponse = null;
+
+    protected PhotoExtractError photoExtractError = null;
 
     public LoaderResult(PhotoExtractResponse photoExtractResponse) {
         this.photoExtractResponse = photoExtractResponse;
     }
 
-    public PhotoExtractResponse getPhotoExtractResponse() {
+    public LoaderResult(PhotoExtractError photoExtractError) {
+        this.photoExtractError = photoExtractError;
+    }
+
+    public PhotoExtractResponse getResponse() {
         return photoExtractResponse;
+    }
+
+    public boolean isResponse() {
+        return photoExtractResponse != null;
+    }
+
+    public PhotoExtractError getError() {
+        return photoExtractError;
+    }
+
+    public boolean isError() {
+        return photoExtractError != null;
     }
 }

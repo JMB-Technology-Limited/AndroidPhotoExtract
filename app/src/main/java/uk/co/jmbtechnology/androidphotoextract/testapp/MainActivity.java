@@ -8,6 +8,10 @@ import android.support.v4.content.Loader;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import java.io.PrintWriter;
+import java.io.StringWriter;
 
 import uk.co.jmbtechnology.androidphotoextract.PhotoExtractResponse;
 import uk.co.jmbtechnology.androidphotoextract.PhotoExtractWorkerGetIntent;
@@ -93,54 +97,68 @@ public class MainActivity extends FragmentActivity {
          **/
         @Override
         public void onLoadFinished(Loader<LoaderResult> loader, LoaderResult data) {
-            PhotoExtractResponse photoExtractResponse = data.getPhotoExtractResponse();
+            if (data.isResponse()) {
+                // Got data!
+                PhotoExtractResponse photoExtractResponse = data.getResponse();
 
-            TextView rawDebugInfoTextView = (TextView)findViewById(R.id.raw_debug_information);
-            rawDebugInfoTextView.setText(photoExtractResponse.getRawDebugInformation());
+                TextView rawDebugInfoTextView = (TextView) findViewById(R.id.raw_debug_information);
+                rawDebugInfoTextView.setText(photoExtractResponse.getRawDebugInformation());
 
-            TextView filenameTextView = (TextView)findViewById(R.id.filename);
-            if (photoExtractResponse.hasFilename()) {
-                filenameTextView.setText(photoExtractResponse.getFilename());
-            } else {
-                filenameTextView.setText("Not returned");
+                TextView filenameTextView = (TextView) findViewById(R.id.filename);
+                if (photoExtractResponse.hasFilename()) {
+                    filenameTextView.setText(photoExtractResponse.getFilename());
+                } else {
+                    filenameTextView.setText("Not returned");
+                }
+
+                TextView widthTextView = (TextView) findViewById(R.id.width_x_height);
+                if (photoExtractResponse.hasWidthHeight()) {
+                    widthTextView.setText(photoExtractResponse.getWidth() + " x " + photoExtractResponse.getHeight());
+                } else {
+                    widthTextView.setText("Not returned");
+                }
+
+                TextView MimeTypeTextView = (TextView) findViewById(R.id.mime_type);
+                if (photoExtractResponse.hasMIMEType()) {
+                    MimeTypeTextView.setText(photoExtractResponse.getMIMEType());
+                } else {
+                    MimeTypeTextView.setText("Not returned");
+                }
+
+                TextView EXIFMakeTextView = (TextView) findViewById(R.id.exif_make);
+                if (photoExtractResponse.hasEXIFMake()) {
+                    EXIFMakeTextView.setText(photoExtractResponse.getEXIFMake());
+                } else {
+                    EXIFMakeTextView.setText("Not returned");
+                }
+
+                TextView EXIFOrientationTextView = (TextView) findViewById(R.id.exif_orientation);
+                if (photoExtractResponse.hasEXIFOrientation()) {
+                    EXIFOrientationTextView.setText(Integer.toString(photoExtractResponse.getEXIFOrientation()));
+                } else {
+                    EXIFOrientationTextView.setText("Not returned");
+                }
+
+                ImageView thumbnailImageView = (ImageView) findViewById(R.id.thumbnail);
+                if (photoExtractResponse.hasThumbnail()) {
+                    thumbnailImageView.setVisibility(View.VISIBLE);
+                    thumbnailImageView.setImageBitmap(photoExtractResponse.getThumbnail());
+                } else {
+                    thumbnailImageView.setVisibility(View.GONE);
+                }
+            } else if (data.isError()) {
+                // Got error!
+                TextView rawDebugInfoTextView = (TextView) findViewById(R.id.raw_debug_information);
+                StringWriter errors = new StringWriter();
+                data.getError().getOriginalThrowable().printStackTrace(new PrintWriter(errors));
+                rawDebugInfoTextView.setText(
+                        data.getError().getOriginalThrowable().toString() +"\n\n" +
+                        errors.toString()+"\n\n"+
+                        data.getError().getRawDebugInformation()
+                );
+
+                Toast.makeText(getBaseContext(), R.string.activity_main_error, Toast.LENGTH_SHORT).show();
             }
-
-            TextView widthTextView = (TextView)findViewById(R.id.width_x_height);
-            if (photoExtractResponse.hasWidthHeight()) {
-                widthTextView.setText(photoExtractResponse.getWidth() + " x " + photoExtractResponse.getHeight());
-            } else {
-                widthTextView.setText("Not returned");
-            }
-
-            TextView MimeTypeTextView = (TextView)findViewById(R.id.mime_type);
-            if (photoExtractResponse.hasMIMEType()) {
-                MimeTypeTextView.setText(photoExtractResponse.getMIMEType());
-            } else {
-                MimeTypeTextView.setText("Not returned");
-            }
-
-            TextView EXIFMakeTextView = (TextView)findViewById(R.id.exif_make);
-            if (photoExtractResponse.hasEXIFMake()) {
-                EXIFMakeTextView.setText(photoExtractResponse.getEXIFMake());
-            } else {
-                EXIFMakeTextView.setText("Not returned");
-            }
-
-            TextView EXIFOrientationTextView = (TextView)findViewById(R.id.exif_orientation);
-            if (photoExtractResponse.hasEXIFOrientation()) {
-                EXIFOrientationTextView.setText(Integer.toString(photoExtractResponse.getEXIFOrientation()));
-            } else {
-                EXIFOrientationTextView.setText("Not returned");
-            }
-
-            ImageView thumbnailImageView = (ImageView)findViewById(R.id.thumbnail);
-            if (photoExtractResponse.hasThumbnail()) {
-                thumbnailImageView.setVisibility(View.VISIBLE);
-                thumbnailImageView.setImageBitmap(photoExtractResponse.getThumbnail());
-            } else {
-                thumbnailImageView.setVisibility(View.GONE);
-            }
-
         }
 
         @Override
