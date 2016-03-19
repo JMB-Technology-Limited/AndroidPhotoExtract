@@ -3,4 +3,13 @@
     <string name="activity_main_title">AndroidPhotoExtract Test App</string>
     <string name="activity_main_button_pick">Extract A Photo</string>
     <string name="activity_main_error">An error occured getting that photo!</string>
+    <string name="activity_main_thumbnail">Thumbnail</string>
+    <string name="activity_main_filename">Filename</string>
+    <string name="activity_main_filename_app">Filename In App Files</string>
+    <string name="activity_main_filename_external_storage">Filename In External Storage</string>
+    <string name="activity_main_width_height">Width X Height</string>
+    <string name="activity_main_mime_type">MIME Type</string>
+    <string name="activity_main_exif_make">EXIF Make</string>
+    <string name="activity_main_exif_orientation">EXIF Orientation</string>
+    <string name="activity_main_raw_debug_info">Raw Debug Information</string>
 </resources>

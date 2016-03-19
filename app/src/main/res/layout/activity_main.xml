@@ -27,7 +27,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             style="@style/label"
-            android:text="Thumbnail"/>
+            android:text="@string/activity_main_thumbnail"/>
 
         <ImageView
             android:id="@+id/thumbnail"
@@ -38,7 +38,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             style="@style/label"
-            android:text="Filename"/>
+            android:text="@string/activity_main_filename"/>
 
         <TextView
             android:id="@+id/filename"
@@ -49,7 +49,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             style="@style/label"
-            android:text="Filename In App Files"/>
+            android:text="@string/activity_main_filename_app"/>
 
         <TextView
             android:id="@+id/filename_app_files"
@@ -60,7 +60,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             style="@style/label"
-            android:text="Filename In External Storage"/>
+            android:text="@string/activity_main_filename_external_storage"/>
 
         <TextView
             android:id="@+id/filename_external_storage"
@@ -71,7 +71,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             style="@style/label"
-            android:text="Width X Height"/>
+            android:text="@string/activity_main_width_height"/>
 
         <TextView
             android:id="@+id/width_x_height"
@@ -82,7 +82,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             style="@style/label"
-            android:text="MIME Type"/>
+            android:text="@string/activity_main_mime_type"/>
 
         <TextView
             android:id="@+id/mime_type"
@@ -93,7 +93,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             style="@style/label"
-            android:text="EXIF Make"/>
+            android:text="@string/activity_main_exif_make"/>
 
         <TextView
             android:id="@+id/exif_make"
@@ -104,7 +104,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             style="@style/label"
-            android:text="EXIF Orientation"/>
+            android:text="@string/activity_main_exif_orientation"/>
 
         <TextView
             android:id="@+id/exif_orientation"
@@ -115,7 +115,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             style="@style/label"
-            android:text="Raw Debug Information"/>
+            android:text="@string/activity_main_raw_debug_info"/>
 
         <TextView
             android:id="@+id/raw_debug_information"
